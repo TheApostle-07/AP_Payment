@@ -184,6 +184,9 @@ export default function PaymentPage() {
           <div className={styles.dynamicHeader}>
             <h3>For Security reasons</h3>
             <p>This is Your Dynamic Art</p>
+            <p className={styles.postCardMessage}>
+            <i>Don't worry you will be redirected to the file</i>
+          </p>
           </div>
 
           {/* Payment card */}
@@ -213,9 +216,7 @@ export default function PaymentPage() {
           </div>
 
           {/* Message below the card */}
-          <p className={styles.postCardMessage}>
-            <i>Don't worry you will be redirected to the file</i>
-          </p>
+         
 
           <footer className={styles.dynamicFooter}>
             <p>&copy; 2024 ALINA POPOVA. All rights reserved.</p>
@@ -254,10 +255,13 @@ export default function PaymentPage() {
               </a>
             </li>
             <li>
-              <a href="privacy">Privacy Policy</a>
+              <a href="/aboutus">About Us</a>
             </li>
             <li>
-              <a href="contact">Contact Us</a>
+              <a href="/privacy">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="/contact">Contact Us</a>
             </li>
             <li>
               <a href="https://merchant.razorpay.com/policy/OrOebQ4vIZty7L/terms">
