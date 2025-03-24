@@ -1,3 +1,5 @@
+
+
 /* globals.css */
 
 /* Global Variables */
@@ -34,16 +36,18 @@ body {
 
 /* Header Styles */
 header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;                 /* Ensures the header stays above other elements */
   background-color: var(--bittersweet-shimmer);
-  padding: 20px;
-  display: flex;                  /* Flexbox layout */
+  display: flex;
   justify-content: space-between; /* Brand on left, nav on right */
   align-items: center;
+  padding: 20px;
   width: 100%;
-  max-width: 1400px;
-  border-radius: 12px;
-  margin: 20px auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 12px 12px;   /* Rounded bottom corners, flush at the top */
+  margin-bottom: 20px;           /* Space below header before main content */
 }
 
 .logo-container {
@@ -202,84 +206,68 @@ nav ul li a.active {
   margin: 5px 0;
 }
 
-/* Responsive Adjustments */
+/* ============================= */
+/*     Mobile (max-width: 768px) */
+/* ============================= */
 @media (max-width: 768px) {
-  body {
-    padding: 10px;
-  }
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px;
-  }
+  /* Hide the nav row by default; show the burger menu */
   nav ul {
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
+    display: none; /* We'll show it by toggling .nav-active */
   }
-  nav ul li a {
-    font-size: 16px;
-    padding: 12px;
-    width: 100%;
-  }
-  .brand-name {
-    margin-bottom: 10px;
-  }
-  .logo-container img {
-    width: 50px;
-    height: 50px;
-  }
-  .container {
-    width: 100%;
-    padding: 15px;
-  }
-  .product-details h2 {
-    font-size: 22px;
-  }
-  .buy-now {
-    font-size: 16px;
-  }
-  nav ul li a {
-    font-size: 16px;
-  }
-}
-
-/* Burger Menu Adjustments for Small Screens */
-@media (max-width: 768px) {
   .burger-menu {
     display: flex;
+    top: 17px;
   }
+
+  /* Keep the header a single row: brand on left, burger on right */
+  header {
+    padding: 15px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0; /* optional: remove or reduce if you like */
+  }
+
+  /* The hidden nav transforms in from the right when .nav-active is toggled */
   nav ul {
     position: absolute;
-    top: 60px;
-    right: 0px;
+    top: 70px; /* just below the header */
+    right: 10px;
     background-color: var(--bittersweet-shimmer);
     flex-direction: column;
     gap: 10px;
     width: 200px;
     padding: 20px;
+    border-radius: 8px;
     transform: translateX(100%);
     transition: transform 0.3s ease;
-    border-radius: 8px;
-    display: none;
   }
+
+  /* When nav-active is toggled, the nav slides in */
   .nav-active {
     transform: translateX(0);
-    display: block;
+    display: flex; /* ensure it's visible */
   }
+
   nav ul li a {
-    padding: 12px;
-    width: 100%;
-    text-align: center;
     font-size: 16px;
+    padding: 12px;
+    text-align: center;
     color: #fff;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
-  nav ul li a:hover {
-    background-color: var(--indian-red);
+
+  .logo-container img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .brand-name {
+    font-size: 22px;
   }
 }
+
+
+
 
 /* Privacy Policy Section */
 .privacy-policy {
@@ -396,4 +384,29 @@ footer {
 
 .business-email a:hover {
   color: var(--indian-red);
+}
+/* globals.css (or wherever your global styles are) */
+
+.aboutus {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.aboutus-content {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.aboutus-content h2 {
+  color: var(--bittersweet-shimmer);
+  margin-bottom: 20px;
+}
+
+.aboutus-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
