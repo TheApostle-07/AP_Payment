@@ -17,6 +17,7 @@ export default function Privacy() {
         <nav>
           <ul className="nav-links">
             <li><a href="/">Home</a></li>
+            <li><a href="/aboutus">About Us</a></li>
             <li><a href="/privacy" className="active">Privacy Policy</a></li>
             <li><a href="/contact">Contact Us</a></li>
             <li>
