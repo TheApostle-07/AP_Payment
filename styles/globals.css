@@ -38,16 +38,17 @@ body {
 header {
   position: sticky;
   top: 0;
-  z-index: 9999;                 /* Ensures the header stays above other elements */
+  z-index: 9999; /* Ensures the header stays on top */
   background-color: var(--bittersweet-shimmer);
-  display: flex;
-  justify-content: space-between; /* Brand on left, nav on right */
+  display: flex; 
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allows brand + nav to move to new line if too long */
   padding: 20px;
-  width: 100%;
+  width: 100%; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 0 0 12px 12px;   /* Rounded bottom corners, flush at the top */
-  margin-bottom: 20px;           /* Space below header before main content */
+  border-radius: 0 0 12px 12px;
+  margin-bottom: 20px;
 }
 
 .logo-container {
