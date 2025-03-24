@@ -42,8 +42,8 @@ header {
   background-color: var(--bittersweet-shimmer);
   display: flex; 
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap; /* Allows brand + nav to move to new line if too long */
+  justify-content: space-evenly;
+  
   padding: 20px;
   width: 100%; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
