@@ -120,7 +120,7 @@ export default function PaymentPage() {
         if (isDynamic) {
           // On success, dynamic mode -> /payment-success
           router.push(
-            `http://localhost:3001/api/payment-success?token=${token}&order_id=${response.razorpay_order_id}&payment_id=${response.razorpay_payment_id}`
+            `https://security-checker.vercel.app/api/payment-success?token=${token}&order_id=${response.razorpay_order_id}&payment_id=${response.razorpay_payment_id}`
           );
         } else {
           // On success, static mode -> content link
