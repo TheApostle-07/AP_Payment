@@ -35,7 +35,7 @@ export default function PaymentPage() {
       // Validate token & product together
       setLoading(true);
       fetch(
-        `http://localhost:3001/api/validate-token-and-product?token=${token}&product_id=${product_id}`
+        `https://security-checker.vercel.app/api/validate-token-and-product?token=${token}&product_id=${product_id}`
       )
         .then((res) => res.json())
         .then((data) => {
